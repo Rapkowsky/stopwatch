@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Stoper & modal</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Montserrat:400,700&display=swap&subset=latin-ext" rel="stylesheet" />
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<p class="info"><ion-icon name="help-sharp"></ion-icon></p>
+			<h1>Stoper</h1>
+			<p class="stopwatch">0:00</p>
+			<p class="time">0:00</p>
+			<div class="buttons">
+				<button class="start"><ion-icon name="play"></ion-icon></ion-icon></button>
+				<button class="pause"><ion-icon name="pause"></ion-icon></button>
+				<button class="stop"><ion-icon name="stop"></ion-icon></button>
+				<button class="reset"><ion-icon name="close"></ion-icon></button>
+				<button class="history">archiwum</button>
+			</div>
+			<ul class="time-list"></ul>
+		</div>
+
+		<div class="modal-shadow">
+			<div class="modal">
+				<h3>Instrukcja:</h3>
+				<p><ion-icon name="play"></ion-icon></ion-icon> - start</p>
+				<p><ion-icon name="pause"></ion-icon></ion-icon> - pauza</p>
+				<p><ion-icon name="stop"></ion-icon></ion-icon> - stop</p>
+				<p><ion-icon name="close"></ion-icon></ion-icon> - skasuj wszystko (łącznie z archiwum)</p>
+				<p><strong>archiwum</strong> - zobacz wcześniejsze pomiary</p>
+				<button class="close">Zamknij</button>
+			</div>
+		</div>
+
+		<script src="js/main.js"></script>
+	</body>
+</html>
