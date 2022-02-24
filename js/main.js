@@ -14,7 +14,9 @@ let countTime;
 let minutes = 0;
 let seconds = 0;
 
-const startStopWatch = () => {
+const handleStart = () => {
+	clearInterval(countTime);
+
 	countTime = setInterval(() => {
 		if (seconds < 9) {
 			seconds++;
@@ -31,4 +33,12 @@ const startStopWatch = () => {
 	}, 100);
 };
 
-startBtn.addEventListener("click", startStopWatch);
+const handlePause = () => {
+	clearInterval(countTime);
+};
+
+
+
+startBtn.addEventListener("click", handleStart);
+pauseBtn.addEventListener("click", handlePause);
+stopBtn.addEventListener("click", handleStop);
