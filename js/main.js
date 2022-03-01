@@ -47,12 +47,38 @@ const handleStop = () => {
 		console.log(timesArray);
 	}
 
+	clearSuff();
+};
+
+const handleReset = () => {
+	time.style.visibility = "hidden";
+	timesArray = [];
+	clearSuff();
+};
+
+const clearSuff = () => {
 	clearInterval(countTime);
 	stopwatch.textContent = `0:00`;
 	timeList.textContent = "";
 	minutes = 0;
 	seconds = 0;
 };
+
+const handleHistory = () => {
+	timeList.textContent = "";
+	let num = 1;
+
+	timesArray.forEach((time) => {
+		const newTime = document.createElement("li");
+		newTime.innerHTML = `Pomiar nr X:<span>${time}</span>`;
+
+		timeList.appendChild(newTime);
+		num++;
+	});
+};
+
 startBtn.addEventListener("click", handleStart);
 pauseBtn.addEventListener("click", handlePause);
 stopBtn.addEventListener("click", handleStop);
+resetBtn.addEventListener("click", handleReset);
+historyBtn.addEventListener("click", handleHistory);
