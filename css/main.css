@@ -42,6 +42,7 @@ body {
 	color: var(--second-color);
 	cursor: pointer;
 	transition: color 0.3s;
+	z-index: 2;
 }
 
 .info:hover {
@@ -154,6 +155,9 @@ button:focus {
 .modal-animation {
 	animation: show-modal 0.5s;
 }
+.modal-animation-close {
+	animation: close-modal 0.5s forwards;
+}
 
 @keyframes show-modal {
 	0% {
@@ -162,5 +166,14 @@ button:focus {
 
 	100% {
 		opacity: 1;
+	}
+}
+@keyframes close-modal {
+	0% {
+		opacity: 100%;
+	}
+
+	100% {
+		opacity: 0;
 	}
 }

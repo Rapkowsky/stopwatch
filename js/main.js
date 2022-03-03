@@ -70,11 +70,26 @@ const handleHistory = () => {
 
 	timesArray.forEach((time) => {
 		const newTime = document.createElement("li");
-		newTime.innerHTML = `Pomiar nr X:<span>${time}</span>`;
+		newTime.innerHTML = `Pomiar nr ${num}:<span>${time}</span>`;
 
 		timeList.appendChild(newTime);
 		num++;
 	});
+};
+const handleModal = () => {
+	if (!(modalShadow.style.display === "block")) {
+		modalShadow.style.display = "block";
+	} else {
+		modalShadow.style.display = "none";
+	}
+	modalShadow.classList.toggle("modal-animation");
+};
+const handleModalCloseAnimation = () => {
+	modalShadow.classList.add("modal-animation-close");
+	setTimeout(function () {
+		modalShadow.classList.remove("modal-animation-close", "modal-animation");
+		modalShadow.style.display = "none";
+	}, 500);
 };
 
 startBtn.addEventListener("click", handleStart);
@@ -82,3 +97,6 @@ pauseBtn.addEventListener("click", handlePause);
 stopBtn.addEventListener("click", handleStop);
 resetBtn.addEventListener("click", handleReset);
 historyBtn.addEventListener("click", handleHistory);
+infoBtn.addEventListener("click", handleModal);
+closeModalBtn.addEventListener("click", handleModalCloseAnimation);
+window.addEventListener("click", (e) => (e.target === modalShadow ? handleModalCloseAnimation() : false));
